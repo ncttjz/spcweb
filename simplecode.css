@@ -1,0 +1,56 @@
+/*CSS From S#mple Code BWD Team*/
+
+:root {
+--border-radius: 5px;
+--primary-color: #2e7d32;
+--secondary-color: #81c784;
+--accent-color: #ffb74d;
+--background: #f1f8e9;
+--text-color: #263238;
+--alert-color: #e53935;
+--base-padding: 1rem;
+--base-margin: 1.25rem;
+--font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    background-color: var(--background);
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+}
+
+p {
+    font-family: --font;
+    color: var(--text-color);
+}
+
+a {
+    font-family: --font;
+    color: var(--text-color);
+}
+
+button {
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+button:active {
+    background-color: var(--secondary-color);
+    opacity: 0.8;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font);
+    color: var(--text-color);
+    margin-top: var(--base-margin);
+    margin-bottom: 0.625rem;
+  }

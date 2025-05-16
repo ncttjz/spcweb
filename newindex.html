@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảo Vệ Động Vật Quý Hiếm</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #f0f8ff;
+      color: #2e8b57;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2e8b57;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 30px auto;
+      font-size: 18px;
+      max-width: 800px;
+      color: #333;
+    }
+
+    .continent-selector {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .continent-selector button {
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .continent-selector button:hover {
+      background-color: #3cb371;
+    }
+
+    .animal-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .animal-card {
+      background-color: #ffffff;
+      border: 1px solid #2e8b57;
+      border-radius: 10px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .animal-card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bảo Vệ Động Vật Quý Hiếm Trên Thế Giới</h1>
+    <nav>
+      <a href="#intro">Giới thiệu</a>
+      <a href="#continents">Theo Châu Lục</a>
+      <a href="#animal-list">Động Vật</a>
+    </nav>
+  </header>
+
+  <div id="intro" class="intro">
+    <p><strong>Hành tinh này không chỉ là của con người!</strong> Mỗi loài động vật đều đóng vai trò quan trọng trong hệ sinh thái. Hãy cùng nhau bảo vệ các loài quý hiếm trước khi quá muộn.</p>
+  </div>
+
+  <div id="continents" class="continent-selector">
+    <button onclick="showAnimals('asia')">Châu Á</button>
+    <button onclick="showAnimals('africa')">Châu Phi</button>
+    <button onclick="showAnimals('europe')">Châu Âu</button>
+    <button onclick="showAnimals('america')">Châu Mỹ</button>
+    <button onclick="showAnimals('australia')">Châu Úc</button>
+  </div>
+
+  <div id="animal-list" class="animal-list"></div>
+
+  <footer>
+    <p>&copy; 2025 - Bảo vệ động vật quý hiếm. Hành động ngay hôm nay!</p>
+  </footer>
+
+  <script>
+    const animalsByContinent = {
+      asia: [
+        {
+          name: "Saola",
+          description: "Loài linh dương quý hiếm sống ở dãy Trường Sơn, Việt Nam và Lào.",
+          status: "Cực kỳ nguy cấp",
+          habitat: "Rừng nhiệt đới"
+        },
+        {
+          name: "Hổ Bengal",
+          description: "Loài hổ lớn sống ở Ấn Độ, Bangladesh và Nepal.",
+          status: "Nguy cấp",
+          habitat: "Rừng rậm và đồng cỏ"
+        }
+      ],
+      africa: [
+        {
+          name: "Tê giác đen",
+          description: "Loài tê giác bị săn bắt nhiều nhất vì sừng của chúng.",
+          status: "Cực kỳ nguy cấp",
+          habitat: "Savanna và rừng cây bụi"
+        },
+        {
+          name: "Gorilla núi",
+          description: "Loài vượn lớn sống ở vùng núi Rwanda, Uganda và Congo.",
+          status: "Nguy cấp",
+          habitat: "Rừng núi cao"
+        }
+      ],
+      europe: [
+        {
+          name: "Linh miêu Iberia",
+          description: "Loài mèo hoang dã sống ở bán đảo Iberia.",
+          status: "Nguy cấp",
+          habitat: "Rừng cây bụi và đồng cỏ"
+        }
+      ],
+      america: [
+        {
+          name: "Báo đốm",
+          description: "Loài mèo lớn sống ở Trung và Nam Mỹ.",
+          status: "Gần nguy cấp",
+          habitat: "Rừng nhiệt đới"
+        },
+        {
+          name: "Gấu Bắc Cực",
+          description: "Loài gấu sống ở vùng Bắc Cực, bị đe dọa bởi biến đổi khí hậu.",
+          status: "Dễ bị tổn thương",
+          habitat: "Băng tuyết và biển băng"
+        }
+      ],
+      australia: [
+        {
+          name: "Gilbert's Potoroo",
+          description: "Loài thú có túi nhỏ sống ở Tây Úc, cực kỳ hiếm.",
+          status: "Cực kỳ nguy cấp",
+          habitat: "Rừng ven biển"
+        },
+        {
+          name: "Quokka",
+          description: "Loài thú có túi nhỏ, nổi tiếng với nụ cười 'hạnh phúc'.",
+          status: "Dễ bị tổn thương",
+          habitat: "Đảo và rừng cây bụi ven biển"
+        }
+      ]
+    };
+
+    function showAnimals(continent) {
+      const animalListDiv = document.getElementById("animal-list");
+      animalListDiv.innerHTML = "";
+
+      const animals = animalsByContinent[continent];
+      animals.forEach((animal) => {
+        const card = document.createElement("div");
+        card.className = "animal-card";
+        card.innerHTML = `
+          <h3>${animal.name}</h3>
+          <p><strong>Mô tả:</strong> ${animal.description}</p>
+          <p><strong>Tình trạng:</strong> ${animal.status}</p>
+          <p><strong>Môi trường sống:</strong> ${animal.habitat}</p>
+        `;
+        animalListDiv.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

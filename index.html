@@ -11,7 +11,6 @@
 
             <!-- Facebook Meta Tags -->
     <meta property="og:locale" content="vi_VN" />
-    <meta property="og:url" content="https://ncttjz.github.io/ProfileWeb/index.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Animals protection website">
     <meta property="og:site_name" content="JZNCTT" />
@@ -24,9 +23,156 @@
         <!--<link rel="icon" href="./icon.jpg" />-->
         <script src="./assets/js/body.js"></script>
     </head>
+        <!--Body-->
     <body>
-        <!--Code-->
-        <div class="container"> 
-            
+        <div id="preloader">
+            <div class="spinner"></div>
+        </div>
+        <div><form id="topbar" class="form-topbar">
+            <div class="topbar-container">
+                <a href="#about" class="btn-topbar smooth-scroll" data-section="aboutsect">INTRO</a>
+                <a href="#ability" class="btn-topbar smooth-scroll" data-section="abilitysect">REALITY</a>
+                <a href="#experience" class="btn-topbar smooth-scroll" data-section="experiencesect">ANIMALS LIST</a>
+                <a href="#portfolio" class="btn-topbar smooth-scroll" data-section="portfoliosect">FUNDS</a>
+                <a href="#contact" class="btn-topbar smooth-scroll" data-section="contactsect">COPYRIGHT</a>
+            </div>
+        </form></div>
+        <div id="aboutsect" class="content show">
+            <div id="about">
+                <div class="intro">
+                    <p><strong>Hành tinh này không chỉ là của con người!</strong> Mỗi loài động vật đều đóng vai trò quan trọng trong hệ sinh thái. Hãy cùng nhau bảo vệ các loài quý hiếm trước khi quá muộn.</p>
+                </div>
+            </div>
+        </div>
+        <div id="abilitysect" class="content show">
+            <div id="ability" class="div-center">
+                <h2 class="parttitle">ABILITY</h2>
+            </div>
+            <div class="div-center">
+                <i>Những thang điểm được đánh giá trên độ tự tin của mình về khả năng đó.</i>
+            </div>
+            <div class="ability-container">
+                <div class="row">
+                    <div class="ability-box">
+                        <img class="sameicon" src="./assets/images/htmlcssjs.png" alt="HTML5, CSS3, JavaScript Icon"><b class="flextext">Website Development</b>
+                        <div class="skillcontainer">
+                            <div class="skill" data-percent="75">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                        <p>Căn bản HTML5 CSS3 JavaScript</p>
+                    </div>
+                    <div class="ability-box">
+                        <img class="sameicon" src="./assets/images/pycjv.png" alt="C++, Java, Python Icon"><b class="flextext">Desktop Development</b>
+                        <div class="skillcontainer">
+                            <div class="skill" data-percent="70">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                        <p>Căn bản C++, Java, Python</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ability-box">
+                        <img class="sameicon" src="./assets/images/dbicon.png" alt="Database Icon"><b class="flextext">Database(MySQL, SQLServer)</b>
+                        <div class="skillcontainer">
+                            <div class="skill" data-percent="70">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                        <p>MySQL, SQL Server</p>
+                    </div>
+                    <div class="ability-box">
+                        <img class="sameicon" src="./assets/images/dsa.png" alt="DSA Icon"><b class="flextext">Data Structures and Algorithms</b>
+                        <div class="skillcontainer">
+                            <div class="skill" data-percent="80">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                        <p class="biggerp">Giải và tối ưu thuật toán...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="experiencesect" class="content show">
+            <div id="experience">
+                <div class="div-center pd"><strong>Hãy chọn châu lục để xem những loài động vật quý hiếm trên châu lục đó.</strong></div>
+                 <div id="continents" class="continent-selector">
+                    <button onclick="showAnimals('asia')">Châu Á</button>
+                    <button onclick="showAnimals('africa')">Châu Phi</button>
+                    <button onclick="showAnimals('europe')">Châu Âu</button>
+                    <button onclick="showAnimals('america')">Châu Mỹ</button>
+                    <button onclick="showAnimals('australia')">Châu Úc</button>
+                </div>
+            </div>
+        </div>
+  <div id="animal-list" class="animal-list"></div>
+            </div>
+            <div class="div-center dot-div">
+                <i class="fas fa-circle dot"></i>
+                <i class="fas fa-circle dot"></i>
+                <i class="fas fa-circle dot"></i>
+            </div>
+        </div>
+        <div id="portfoliosect" class="content show">
+            <div id="portfolio" class="div-center">
+                <h2 class="parttitle">PORTFOLIO</h2>
+            </div>
+            <div class="div-center">
+                <i>Những project mà mình đã thực hiện.</i>
+            </div>
+            <div class="row">
+                <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; overflow: hidden; border-radius: 1px;">
+                    <img src="./assets/images/colorbgcard.png" alt="Application Picture"    
+                         class="d-block w-full">
+                
+                    <div class="px-2 py-2">
+                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                            Desktop Application
+                        </p>
+                
+                        <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                            Color Background 1.0
+                        </h1>
+                
+                        <p class="mb-1">
+                            This application help you easy change background color and desktop wallpapers &hellip;
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/ncttjz/colorbg-src" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                            MORE
+                        </a>
+                    </div>
+                </div>
+                <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; overflow: hidden; border-radius: 1px;">
+                    <img src="./assets/images/billardmmcard.png" alt="Application Picture"    
+                         class="d-block w-full">
+                
+                    <div class="px-2 py-2">
+                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                            Desktop Application
+                        </p>
+                
+                        <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                            Billard Shop Management
+                        </h1>
+                
+                        <p class="mb-1">
+                            This application help manage your billards shop &hellip;
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/ncttjz/Billard-Shop-Management" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                            More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contactsect" class="contact-container">
+            <div id="contact">
+                <p>© 2025 Animals Protection Website • Made with 💚 by S#mple Code</p>
+            </div>
         </div>
     </body>

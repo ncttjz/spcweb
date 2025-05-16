@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+    <head>
+        <title>JZNCTT</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="Animals, BWD Contest, Best Website Desingers, VKU, VKU Contest">
+        <meta name="description" content="Animals protection website">
+        <meta name="author" content="S#mple Code Team">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:locale" content="vi_VN" />
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Animals protection website">
+        <meta property="og:site_name" content="JZNCTT" />
+        <meta property="og:image" content="icon.jpg">
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+
+        <!-- CSS and JavaScript -->
+        <link rel="stylesheet" href="./assets/css/simplecode.css">
+        <link rel="stylesheet" href="./assets/css/extinct_animals.css">
+        <!--<link rel="icon" href="./icon.jpg" />-->
+        <script src="./assets/js/body.js"></script>
+    </head>
+    <!--Body-->
+    <body>
+        <div id="preloader">
+            <div class="spinner"></div>
+        </div>
+        <div><form id="topbar" class="form-topbar">
+            <div class="topbar-container">
+                <a href="#about" class="btn-topbar smooth-scroll" data-section="aboutsect">INTRO</a>
+                <a href="#reality" class="btn-topbar smooth-scroll" data-section="realitysect">REALITY</a>
+                <a href="#experience" class="btn-topbar smooth-scroll" data-section="experiencesect">ANIMALS LIST</a>
+                <a href="#portfolio" class="btn-topbar smooth-scroll" data-section="portfoliosect">FUNDS</a>
+                <a href="#contact" class="btn-topbar smooth-scroll" data-section="contactsect">COPYRIGHT</a>
+            </div>
+        </form></div>
+        <div id="aboutsect" class="content show">
+            <div id="about">
+                <div class="intro">
+                    <p><strong>Hành tinh này không chỉ là của con người!</strong> Mỗi loài động vật đều đóng vai trò quan trọng trong hệ sinh thái. Hãy cùng nhau bảo vệ các loài quý hiếm trước khi quá muộn.</p>
+                </div>
+            </div>
+        </div>
+        <div id="realitysect" class="content show">
+            <div id="reality" class="div-center">
+                <h2 class="parttitle">REALITY</h2>
+            </div>
+            <div class="div-center">
+                <i>Learn about the current state of wildlife.</i>
+            </div>
+            <div class="ability-container">
+                <div class="carousel">
+                    <div class="nav-bar left-bar" onclick="prevAnimal()"></div>
+                    <div class="carousel-content">
+                        <div class="animal-box active" data-animal="1">
+                            <a href="https://baotintuc.vn/long-form/emagazine/dong-vat-hoang-da-ben-bo-vuc-tuyet-chung-20211210222110940.htm" target="_blank">
+                                <img class="sameicon" src="./assets/images/a1.jpg" alt="a1">
+                            </a>
+                            <b class="flextext">Động vật hoang dã bên bờ vực tuyệt chủng</b>
+                            <p class="biggerp">Tình trạng buôn bán và nuôi nhốt trái phép động vật hoang dã tại Việt Nam, với hơn 600 vụ việc được ghi nhận từ năm 2014 đến 2019. Các loài như voi, tê giác, hổ, tê tê đang bị săn bắt và buôn bán trái phép, đẩy chúng đến bờ vực tuyệt chủng. Bài báo cũng nêu bật những khó khăn trong công tác quản lý và thực thi pháp luật, cũng như sự cần thiết của việc tăng cường nhận thức cộng đồng.</p>
+                        </div>
+                        <div class="animal-box" data-animal="2">
+                            <a href="https://tuoitre.vn/so-luong-dong-vat-hoang-da-toan-cau-giam-73-trong-50-nam-qua-2024101014153298.htm" target="_blank">
+                                <img class="sameicon" src="./assets/images/a2.jpg" alt="a2">
+                            </a>
+                            <b class="flextext">Số lượng động vật hoang dã toàn cầu giảm 73% trong 50 năm qua</b>
+                            <p class="biggerp">Theo Báo cáo Living Planet Report 2024 của WWF, quần thể động vật hoang dã trên toàn cầu đã giảm khoảng 73% từ năm 1970 đến 2020. Nguyên nhân chủ yếu là do hoạt động của con người như phá rừng, ô nhiễm môi trường và biến đổi khí hậu. Bài viết nhấn mạnh sự cần thiết của các hành động bảo tồn khẩn cấp để ngăn chặn đà suy giảm này.</p>
+                        </div>
+                        <div class="animal-box" data-animal="3">
+                            <a href="https://khoahoc.tv/nhung-dong-vat-dang-doi-mat-voi-nguy-co-tuyet-chung-33160" target="_blank">
+                                <img class="sameicon" src="./assets/images/a3.jpg" alt="a3">
+                            </a>
+                            <b class="flextext">Những động vật đang đối mặt với nguy cơ tuyệt chủng</b>
+                            <p class="biggerp">Danh sách các loài động vật đang bị đe dọa nghiêm trọng, bao gồm cá voi xanh, gấu trúc khổng lồ, hổ, đười ươi Sumatra, tê giác đen, vẹt Kakapo và sao la. Mỗi loài đều đang chịu tác động từ mất môi trường sống, săn bắt trái phép và biến đổi khí hậu. Bài viết cung cấp thông tin chi tiết về tình trạng của từng loài và những nỗ lực bảo tồn hiện nay.</p>
+                        </div>
+                    </div>
+                    <div class="nav-bar right-bar" onclick="nextAnimal()"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="experiencesect" class="content show">
+            <div id="experience">
+                <div class="div-center pd"><strong>Hãy chọn châu lục để xem những loài động vật quý hiếm trên châu lục đó.</strong></div>
+                 <div id="continents" class="continent-selector">
+                    <button onclick="showAnimals('asia')">Châu Á</button>
+                    <button onclick="showAnimals('africa')">Châu Phi</button>
+                    <button onclick="showAnimals('europe')">Châu Âu</button>
+                    <button onclick="showAnimals('america')">Châu Mỹ</button>
+                    <button onclick="showAnimals('australia')">Châu Úc</button>
+                </div>
+            </div>
+        </div>
+        <div id="animal-list" class="animal-list"></div>
+        <div class="div-center dot-div">
+            <i class="fas fa-circle dot"></i>
+            <i class="fas fa-circle dot"></i>
+            <i class="fas fa-circle dot"></i>
+        </div>
+        <div id="portfoliosect" class="content show">
+            <div id="portfolio" class="div-center">
+                <h2 class="parttitle">PORTFOLIO</h2>
+            </div>
+            <div class="div-center">
+                <i>Những project mà mình đã thực hiện.</i>
+            </div>
+            <div class="row">
+                <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; overflow: hidden; border-radius: 1px;">
+                    <img src="./assets/images/colorbgcard.png" alt="Application Picture"    
+                         class="d-block w-full">
+                
+                    <div class="px-2 py-2">
+                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                            Desktop Application
+                        </p>
+                
+                        <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                            Color Background 1.0
+                        </h1>
+                
+                        <p class="mb-1">
+                            This application help you easy change background color and desktop wallpapers …
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/ncttjz/colorbg-src" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                            MORE
+                        </a>
+                    </div>
+                </div>
+                <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; overflow: hidden; border-radius: 1px;">
+                    <img src="./assets/images/billardmmcard.png" alt="Application Picture"    
+                         class="d-block w-full">
+                
+                    <div class="px-2 py-2">
+                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                            Desktop Application
+                        </p>
+                
+                        <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                            Billard Shop Management
+                        </h1>
+                
+                        <p class="mb-1">
+                            This application help manage your billards shop …
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/ncttjz/Billard-Shop-Management" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                            More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contactsect" class="contact-container">
+            <div id="contact">
+                <p>© 2025 Animals Protection Website • Made with 💚 by S#mple Code</p>
+            </div>
+        </div>
+
+        <script>
+        let currentAnimal = 1;
+        const totalAnimals = 3;
+
+        function showAnimal(index) {
+            const animals = document.querySelectorAll('.animal-box');
+            animals.forEach(animal => {
+                animal.classList.remove('active');
+                animal.style.opacity = '0';
+                animal.style.transform = 'translateX(50px)';
+            });
+            const activeAnimal = document.querySelector(`.animal-box[data-animal="${index}"]`);
+            activeAnimal.classList.add('active');
+            activeAnimal.style.opacity = '1';
+            activeAnimal.style.transform = 'translateX(0)';
+        }
+
+        function nextAnimal() {
+            currentAnimal = (currentAnimal % totalAnimals) + 1;
+            showAnimal(currentAnimal);
+        }
+
+        function prevAnimal() {
+            currentAnimal = (currentAnimal - 2 + totalAnimals) % totalAnimals + 1;
+            showAnimal(currentAnimal);
+        }
+
+        showAnimal(currentAnimal);
+        </script>
+    </body>
+</html>

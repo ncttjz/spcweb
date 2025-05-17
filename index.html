@@ -22,6 +22,98 @@
         <link rel="stylesheet" href="./assets/css/simplecode.css">
         <!--<link rel="icon" href="./icon.jpg" />-->
         <script src="./assets/js/body.js"></script>
+        <!--Thêm style cho Animals List-->
+            <style>
+         .continent-selector {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .continent-selector.fixed {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            background-color: #f0f8ff;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .continent-selector button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .continent-selector button:hover {
+            background-color: #3cb371;
+        }
+
+        .animal-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .animal-list.fixed {
+            padding-top: 80px;
+        }
+
+        .animal-card {
+            background-color: #ffffff;
+            border: 1px solid #2e8b57;
+            border-radius: 10px;
+            padding: 15px;
+            width: 280px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt */
+            cursor: pointer; /* Con trỏ tay khi hover */
+        }
+
+        .animal-card:hover {
+            transform: scale(1.05); /* Phóng to nhẹ */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Bóng đậm hơn */
+        }
+
+        .animal-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #2e8b57;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .animal-card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+            flex-grow: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .animal-card p strong {
+            color: #2e8b57;
+        }
+    </style>
     </head>
         <!--Body-->
     <body>
@@ -45,52 +137,39 @@
             </div>
         </div>
         <div id="abilitysect" class="content show">
-            <div id="ability" class="div-center">
-                <h2 class="parttitle">ABILITY</h2>
+            <div id="reality" class="div-center">
+                <h2 class="parttitle">REALITY</h2>
             </div>
             <div class="div-center">
-                <i>Những thang điểm được đánh giá trên độ tự tin của mình về khả năng đó.</i>
+                <i>Learn about the current state of wildlife.</i>
             </div>
             <div class="ability-container">
-                <div class="row">
-                    <div class="ability-box">
-                        <img class="sameicon" src="./assets/images/htmlcssjs.png" alt="HTML5, CSS3, JavaScript Icon"><b class="flextext">Website Development</b>
-                        <div class="skillcontainer">
-                            <div class="skill" data-percent="75">
-                                <span>75%</span>
-                            </div>
+                <div class="carousel">
+                    <div class="nav-bar left-bar" onclick="prevAnimal()"></div>
+                    <div class="carousel-content">
+                        <div class="animal-box active" data-animal="1">
+                            <a href="https://baotintuc.vn/long-form/emagazine/dong-vat-hoang-da-ben-bo-vuc-tuyet-chung-20211210222110940.htm" target="_blank">
+                                <img class="sameicon" src="./assets/images/a1.jpg" alt="a1">
+                            </a>
+                            <b class="flextext">Động vật hoang dã bên bờ vực tuyệt chủng</b>
+                            <p class="biggerp">Tình trạng buôn bán và nuôi nhốt trái phép động vật hoang dã tại Việt Nam, với hơn 600 vụ việc được ghi nhận từ năm 2014 đến 2019. Các loài như voi, tê giác, hổ, tê tê đang bị săn bắt và buôn bán trái phép, đẩy chúng đến bờ vực tuyệt chủng. Bài báo cũng nêu bật những khó khăn trong công tác quản lý và thực thi pháp luật, cũng như sự cần thiết của việc tăng cường nhận thức cộng đồng.</p>
                         </div>
-                        <p>Căn bản HTML5 CSS3 JavaScript</p>
-                    </div>
-                    <div class="ability-box">
-                        <img class="sameicon" src="./assets/images/pycjv.png" alt="C++, Java, Python Icon"><b class="flextext">Desktop Development</b>
-                        <div class="skillcontainer">
-                            <div class="skill" data-percent="70">
-                                <span>70%</span>
-                            </div>
+                        <div class="animal-box" data-animal="2">
+                            <a href="https://tuoitre.vn/so-luong-dong-vat-hoang-da-toan-cau-giam-73-trong-50-nam-qua-2024101014153298.htm" target="_blank">
+                                <img class="sameicon" src="./assets/images/a2.jpg" alt="a2">
+                            </a>
+                            <b class="flextext">Số lượng động vật hoang dã toàn cầu giảm 73% trong 50 năm qua</b>
+                            <p class="biggerp">Theo Báo cáo Living Planet Report 2024 của WWF, quần thể động vật hoang dã trên toàn cầu đã giảm khoảng 73% từ năm 1970 đến 2020. Nguyên nhân chủ yếu là do hoạt động của con người như phá rừng, ô nhiễm môi trường và biến đổi khí hậu. Bài viết nhấn mạnh sự cần thiết của các hành động bảo tồn khẩn cấp để ngăn chặn đà suy giảm này.</p>
                         </div>
-                        <p>Căn bản C++, Java, Python</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="ability-box">
-                        <img class="sameicon" src="./assets/images/dbicon.png" alt="Database Icon"><b class="flextext">Database(MySQL, SQLServer)</b>
-                        <div class="skillcontainer">
-                            <div class="skill" data-percent="70">
-                                <span>70%</span>
-                            </div>
+                        <div class="animal-box" data-animal="3">
+                            <a href="https://khoahoc.tv/nhung-dong-vat-dang-doi-mat-voi-nguy-co-tuyet-chung-33160" target="_blank">
+                                <img class="sameicon" src="./assets/images/a3.jpg" alt="a3">
+                            </a>
+                            <b class="flextext">Những động vật đang đối mặt với nguy cơ tuyệt chủng</b>
+                            <p class="biggerp">Danh sách các loài động vật đang bị đe dọa nghiêm trọng, bao gồm cá voi xanh, gấu trúc khổng lồ, hổ, đười ươi Sumatra, tê giác đen, vẹt Kakapo và sao la. Mỗi loài đều đang chịu tác động từ mất môi trường sống, săn bắt trái phép và biến đổi khí hậu. Bài viết cung cấp thông tin chi tiết về tình trạng của từng loài và những nỗ lực bảo tồn hiện nay.</p>
                         </div>
-                        <p>MySQL, SQL Server</p>
                     </div>
-                    <div class="ability-box">
-                        <img class="sameicon" src="./assets/images/dsa.png" alt="DSA Icon"><b class="flextext">Data Structures and Algorithms</b>
-                        <div class="skillcontainer">
-                            <div class="skill" data-percent="80">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                        <p class="biggerp">Giải và tối ưu thuật toán...</p>
-                    </div>
+                    <div class="nav-bar right-bar" onclick="nextAnimal()"></div>
                 </div>
             </div>
         </div>
@@ -114,58 +193,50 @@
                 <i class="fas fa-circle dot"></i>
             </div>
         </div>
-        <div id="portfoliosect" class="content show">
-            <div id="portfolio" class="div-center">
-                <h2 class="parttitle">PORTFOLIO</h2>
-            </div>
-            <div class="div-center">
-                <i>Những project mà mình đã thực hiện.</i>
-            </div>
-            <div class="row">
-                <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; overflow: hidden; border-radius: 1px;">
-                    <img src="./assets/images/colorbgcard.png" alt="Application Picture"    
-                         class="d-block w-full">
-                
-                    <div class="px-2 py-2">
-                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
-                            Desktop Application
-                        </p>
-                
-                        <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
-                            Color Background 1.0
-                        </h1>
-                
-                        <p class="mb-1">
-                            This application help you easy change background color and desktop wallpapers &hellip;
-                        </p>
+       <div id="portfoliosect" class="content show">
+            <div class="new-footer-container">
+                <div class="new-footer-header">
+                    <div>Về</div>
+                    <div>Chứng nhận</div>
+                    <div>Quản lý động vật</div>
+                    <div>Báo tổn</div>
+                    <div>Dịch vụ AZA</div>
+                </div>
+                <div class="new-footer-buttons">
+                    <div class="new-left-buttons">
+                        <button>TÌM KIẾM SỞ THÚ & THỦY CUNG</button>
+                        <button>THAM GIA</button>
+                        <button>VIỆC LÀM</button>
+                        <button>QUYÊN TẶNG</button>
                     </div>
-                    <div>
-                        <a href="https://github.com/ncttjz/colorbg-src" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
-                            MORE
-                        </a>
+                    <div class="new-right-buttons">
+                        <!-- <button><span class="icon">⚙</span> LỊCH</button>
+                        <button><span class="icon">🔒</span> ĐĂNG NHẬP</button> -->
+                        <button>LIÊN HỆ AZA</button>
                     </div>
                 </div>
-                <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; overflow: hidden; border-radius: 1px;">
-                    <img src="./assets/images/billardmmcard.png" alt="Application Picture"    
-                         class="d-block w-full">
-                
-                    <div class="px-2 py-2">
-                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
-                            Desktop Application
-                        </p>
-                
-                        <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
-                            Billard Shop Management
-                        </h1>
-                
-                        <p class="mb-1">
-                            This application help manage your billards shop &hellip;
-                        </p>
+                <div class="new-social-icons">
+                    <a href="https://instagram.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+                    <a href="https://facebook.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+                    <a href="https://youtube.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube"></a>
+                </div>
+                <div class="new-contact-info">
+                    <div class="new-contact-left">
+                        <p>48 Trà Khê 3, P.Hòa Hải Ngũ Hành Sơn<br>
+                        Điện thoại: 0888-XXX-348<br>
+                        Email: SimpleCode@gmail.com<br>
                     </div>
-                    <div>
-                        <a href="https://github.com/ncttjz/Billard-Shop-Management" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
-                            More
-                        </a>
+                    <div class="new-contact-right">
+                        <ul>
+                            <li>AZA CỦA TÔI</li>
+                            <li>ĐỔI TÁC</li>
+                            <li>QUẢNG CÁO</li>
+                            <li>TIN TỨC</li>
+                            <li>ẢNH</li>
+                            <li>SỰ ĐỔI MỚI WEB</li>
+                            <li>CHÍNH SÁCH BÁO MẤT</li>
+                            <li>ĐIỀU KHOẢN SỬ DỤNG</li>
+                        </ul>
                     </div>
                 </div>
             </div>

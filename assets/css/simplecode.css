@@ -1402,6 +1402,13 @@ blockquote footer {
             padding: 20px;
         }
 
+        .animal-list img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+          }
+
+
         .animal-list.fixed {
             padding-top: 80px;
         }

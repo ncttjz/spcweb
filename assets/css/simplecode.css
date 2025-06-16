@@ -762,7 +762,8 @@ blockquote footer {
 
 .flextext{
   display: flex;
-  width: max-content;
+  justify-content: center;
+  width: 80%;
   padding-bottom: 5px;
 }
 
@@ -1291,8 +1292,8 @@ blockquote footer {
     }
 
     .animal-box .biggerp {
-        font-size: 1.3rem;
-        max-width: 90%;
+        font-size: 1.2rem;
+        max-width: 80%;
     }
 
     .nav-bar {
@@ -1317,7 +1318,7 @@ blockquote footer {
     }
 
     .animal-box .flextext {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .animal-box .biggerp {
@@ -1459,3 +1460,7 @@ blockquote footer {
         .animal-card p strong {
             color: #2e8b57;
         }
+
+        .reality-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
